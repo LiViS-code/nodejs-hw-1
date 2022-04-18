@@ -20,5 +20,10 @@
   "homepage": "https://github.com/LiViS-code/nodejs-hw-1#readme",
   "devDependencies": {
     "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "uuid": "^8.3.2",
+    "yargs": "^17.4.1",
+    "yarn": "^1.22.18"
   }
 }
