@@ -1,8 +1,7 @@
 const path = require("path");
 
 async function pathFile() {
-  const pathToFile = path.join(__dirname, "../db/contacts.json");
-  return pathToFile;
+  return path.join(__dirname, "../db/contacts.json");
 }
 
 module.exports = pathFile;
