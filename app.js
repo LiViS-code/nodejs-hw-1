@@ -14,7 +14,7 @@ async function invokeAction({ action, id, name, email, phone }) {
         if (!contact) {
           throw new Error(`contact with id ${id} not found`);
         }
-        console.log(contact);
+        console.table(contact);
         break;
 
       case "add":
@@ -23,7 +23,8 @@ async function invokeAction({ action, id, name, email, phone }) {
           email,
           phone,
         });
-        console.log("Contact added:", newContact);
+        console.log("Contact added:");
+        console.table(newContact);
         break;
 
       case "remove":
@@ -31,7 +32,8 @@ async function invokeAction({ action, id, name, email, phone }) {
         if (!removeContact) {
           throw new Error(`contact with id ${id} not found`);
         }
-        console.log("Contact has been deleted:", removeContact);
+        console.log("Contact has been deleted:");
+        console.table(removeContact);
         break;
 
       default:
