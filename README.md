@@ -1,9 +1,9 @@
 # nodejs-hw-1
 
-get all -> [link](https://monosnap.com/file/wrZp4jkj05EdtH4RoU289kQh8T5dhp)
+get all -> [link](https://monosnap.com/file/3xMrTWTEU1et0nLznXX3JFkw8uxuGi)
 
-get by id -> [link](https://monosnap.com/file/EsO1pxFfp0uoW13vR2EA5KIImsR7XS)
+get by id -> [link](https://monosnap.com/file/6GfctAa2MfB2VLMTSSAPL9WuzUyfXx)
 
-add contact -> [link](https://monosnap.com/file/z9erZHg9QKQV6SNxtYBuvxdYTUbvzw)
+add contact -> [link](https://monosnap.com/file/vTPWN6CFwFW7bbZ1fXwuGtM64YxshV)
 
-remove contact -> [link](https://monosnap.com/file/TFSxehotVCfx1gXzoTv6t4xFR2vWEj)
+remove contact -> [link](https://monosnap.com/file/PxfsdV9niqlU19Jr3oCLD9NTeWAdvS)
