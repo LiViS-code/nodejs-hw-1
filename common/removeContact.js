@@ -4,7 +4,7 @@ const pathFile = require("./pathFile");
 
 async function removeContact(contactId) {
   const list = await listContacts();
-  const removeIndex = list.findIndex((item) => parseInt(item.id) === contactId);
+  const removeIndex = list.findIndex((item) => item.id === contactId);
   if (removeIndex === -1) {
     return null;
   }
