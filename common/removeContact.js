@@ -9,7 +9,7 @@ async function removeContact(contactId) {
     return null;
   }
   const [removeContact] = list.splice(removeIndex, 1);
-  await fs.writeFile(await pathFile(), JSON.stringify(list));
+  await fs.writeFile(pathFile, JSON.stringify(list));
   return removeContact;
 }
 
