@@ -18,6 +18,7 @@ const argv = program.opts();
 console.log("argv:", argv);
 
 async function invokeAction({ action, id, name, email, phone }) {
+  const idx = parseInt(id);
   switch (action) {
     case "list":
       const contacts = await contactsOperations.listContacts();
@@ -25,9 +26,9 @@ async function invokeAction({ action, id, name, email, phone }) {
       break;
 
     case "get":
-      const contact = await contactsOperations.getContactById(id);
+      const contact = await contactsOperations.getContactById(idx);
       if (!contact) {
-        throw new Error(`contact with id = ${id} not found`);
+        throw new Error(`contact with id = ${idx} not found`);
       }
       console.table(contact);
       break;
@@ -43,9 +44,9 @@ async function invokeAction({ action, id, name, email, phone }) {
       break;
 
     case "remove":
-      const removeContact = await contactsOperations.removeContact(id);
+      const removeContact = await contactsOperations.removeContact(idx);
       if (!removeContact) {
-        throw new Error(`contact with id = ${id} not found`);
+        throw new Error(`contact with id = ${idx} not found`);
       }
       console.log("Contact has been deleted:");
       console.table(removeContact);
