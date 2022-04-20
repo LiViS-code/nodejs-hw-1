@@ -1,4 +1,9 @@
-import contactsOperations from "./index.js";
+import {
+  listContacts,
+  getContactById,
+  removeContact,
+  addContact,
+} from "./index.js";
 import { Command } from "commander";
 
 const program = new Command();
@@ -19,12 +24,12 @@ async function invokeAction({ action, id, name, email, phone }) {
   try {
     switch (action) {
       case "list":
-        const contacts = await contactsOperations.listContacts();
+        const contacts = await listContacts();
         console.table(contacts);
         break;
 
       case "get":
-        const contact = await contactsOperations.getContactById(id);
+        const contact = await getContactById(id);
         if (!contact) {
           throw new Error(`contact with id = ${id} not found`);
         }
@@ -32,7 +37,7 @@ async function invokeAction({ action, id, name, email, phone }) {
         break;
 
       case "add":
-        const newContact = await contactsOperations.addContact({
+        const newContact = await addContact({
           name,
           email,
           phone,
@@ -42,12 +47,12 @@ async function invokeAction({ action, id, name, email, phone }) {
         break;
 
       case "remove":
-        const removeContact = await contactsOperations.removeContact(id);
-        if (!removeContact) {
+        const contactToDelete = await removeContact(id);
+        if (!contactToDelete) {
           throw new Error(`contact with id = ${id} not found`);
         }
         console.log("Contact has been deleted:");
-        console.table(removeContact);
+        console.table(contactToDelete);
         break;
 
       default:
