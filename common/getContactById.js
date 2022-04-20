@@ -1,4 +1,4 @@
-const listContacts = require("./listContacts");
+import listContacts from "./listContacts.js";
 
 async function getContactById(contactId) {
   try {
@@ -13,4 +13,4 @@ async function getContactById(contactId) {
   }
 }
 
-module.exports = getContactById;
+export default getContactById;

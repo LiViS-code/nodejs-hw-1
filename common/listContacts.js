@@ -1,5 +1,5 @@
-const fs = require("fs/promises");
-const pathFile = require("./pathFile");
+import fs from "fs/promises";
+import pathFile from "./pathFile.js";
 
 async function listContacts() {
   try {
@@ -11,4 +11,4 @@ async function listContacts() {
   }
 }
 
-module.exports = listContacts;
+export default listContacts;

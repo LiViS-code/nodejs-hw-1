@@ -1,6 +1,6 @@
-const fs = require("fs/promises");
-const listContacts = require("./listContacts");
-const pathFile = require("./pathFile");
+import fs from "fs/promises";
+import listContacts from "./listContacts.js";
+import pathFile from "./pathFile.js";
 
 async function removeContact(contactId) {
   try {
@@ -17,4 +17,4 @@ async function removeContact(contactId) {
   }
 }
 
-module.exports = removeContact;
+export default removeContact;

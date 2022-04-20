@@ -1,8 +1,6 @@
-const contactsOperations = require("./index");
+import contactsOperations from "./index.js";
+import { Command } from "commander";
 
-// const argv = require("yargs").argv;
-
-const { Command } = require("commander");
 const program = new Command();
 program
   .option("-a, --action <type>", "choose action")

@@ -1,7 +1,7 @@
-const fs = require("fs/promises");
-const { nanoid } = require("nanoid");
-const listContacts = require("./listContacts");
-const pathFile = require("./pathFile");
+import fs from "fs/promises";
+import { nanoid } from "nanoid";
+import listContacts from "./listContacts.js";
+import pathFile from "./pathFile.js";
 
 async function addContact({ name, email, phone }) {
   try {
@@ -15,4 +15,4 @@ async function addContact({ name, email, phone }) {
   }
 }
 
-module.exports = addContact;
+export default addContact;

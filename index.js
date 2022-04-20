@@ -1,10 +1,10 @@
-const pathFile = require("./common/pathFile");
-const listContacts = require("./common/listContacts");
-const getContactById = require("./common/getContactById");
-const removeContact = require("./common/removeContact");
-const addContact = require("./common/addContact");
+import pathFile from "./common/pathFile.js";
+import listContacts from "./common/listContacts.js";
+import getContactById from "./common/getContactById.js";
+import removeContact from "./common/removeContact.js";
+import addContact from "./common/addContact.js";
 
-module.exports = {
+export default {
   pathFile,
   listContacts,
   getContactById,

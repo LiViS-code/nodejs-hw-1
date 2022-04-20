@@ -1,5 +1,8 @@
-const path = require("path");
+import path from "path";
+import * as url from "url";
+
+const __dirname = url.fileURLToPath(new URL(".", import.meta.url));
 
 const pathFile = path.join(__dirname, "../db/contacts.json");
 
-module.exports = pathFile;
+export default pathFile;
