@@ -1,5 +1,6 @@
 import contactsOperations from "./index.js";
 import { Command } from "commander";
+import {Reset, FgCyan, FgRed, FgYellow} from './common/colorsMsg.js';
 
 const program = new Command();
 program
@@ -13,13 +14,12 @@ program.parse(process.argv);
 
 const argv = program.opts();
 
-console.log("argv:", argv);
-
 async function invokeAction({ action, id, name, email, phone }) {
   try {
     switch (action) {
       case "list":
         const contacts = await contactsOperations.listContacts();
+        console.log(FgCyan, 'Contacts list:', Reset);
         console.table(contacts);
         break;
 
@@ -28,6 +28,7 @@ async function invokeAction({ action, id, name, email, phone }) {
         if (!contact) {
           throw new Error(`contact with id = ${id} not found`);
         }
+        console.log(FgCyan, `Contact with id = ${FgYellow}${id}`, Reset)
         console.table(contact);
         break;
 
@@ -37,7 +38,7 @@ async function invokeAction({ action, id, name, email, phone }) {
           email,
           phone,
         });
-        console.log("Contact added:");
+        console.log(FgCyan, `New Contact with id = ${FgYellow}${newContact.id}${FgCyan} added:`, Reset);
         console.table(newContact);
         break;
 
@@ -46,15 +47,15 @@ async function invokeAction({ action, id, name, email, phone }) {
         if (!removeContact) {
           throw new Error(`contact with id = ${id} not found`);
         }
-        console.log("Contact has been deleted:");
+        console.log(FgCyan, `Contact with id = ${FgYellow}${id}${FgCyan} has been deleted:`, Reset);
         console.table(removeContact);
         break;
 
       default:
-        console.warn("\x1B[31m Unknown action type!");
+        console.warn(FgYellow, "Unknown action type!", Reset);
     }
   } catch (error) {
-    console.log(`Error: ${error.messge}`);
+    console.log(FgRed, `Error: ${error.messge}`, Reset);
   }
 }
 
@@ -62,6 +63,6 @@ async function invokeAction({ action, id, name, email, phone }) {
   try {
     await invokeAction(argv);
   } catch (error) {
-    console.log(`Error: ${error.message}`);
+    console.log(FgRed, `Error: ${error.message}`, Reset);
   }
 })();
